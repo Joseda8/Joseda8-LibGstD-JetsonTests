@@ -20,6 +20,10 @@ test_src_3 = [
   'test3_clientapp.c',
 ]
 
+test_src_3_2 = [
+  'test3_clientapp2.c',
+]
+
 test_src_4_appsink_callback = [
   'test4_performance_appsink_callback.c',
 ]
@@ -64,6 +68,15 @@ executable(exe_name,
   install: true,
   include_directories : [configinc],
   dependencies : [gstd_dep, gio_unix_dep, json_glib_dep, gst_audio],
+  c_args: c_args,
+)
+
+exe_name = '@0@-@1@'.format('test3_clientapp2', project_version)
+executable(exe_name,
+  test_src_3_2,
+  install: true,
+  include_directories : [configinc],
+  dependencies : [gstd_dep, gio_unix_dep, json_glib_dep, gst_audio, thread_dep],
   c_args: c_args,
 )
 

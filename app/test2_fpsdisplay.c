@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     }
 
     gstd_read (manager, "pipelines/p/elements/vts", &resource);
-    gstd_update (manager, "/pipelines/p/elements/vts/properties/pattern", "4");
+    gstd_update (manager, "/pipelines/p/elements/vts/properties/pattern", "0");
 
     gstd_update (manager, "/pipelines/p/state", "playing");
 
